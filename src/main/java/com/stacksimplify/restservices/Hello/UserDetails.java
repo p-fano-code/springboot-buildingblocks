@@ -1,4 +1,4 @@
-package com.stacksimplify.restservices.springbootbuildingblocks2.Hello;
+package com.stacksimplify.restservices.Hello;
 
 public class UserDetails {
 
