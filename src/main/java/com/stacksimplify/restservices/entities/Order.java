@@ -9,12 +9,13 @@ import javax.persistence.Table;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends RepresentationModel{
 
 	@Id
 	@GeneratedValue
