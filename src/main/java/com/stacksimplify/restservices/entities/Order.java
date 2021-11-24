@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @Entity
 @Table(name = "orders")
@@ -19,7 +20,9 @@ public class Order extends RepresentationModel{
 
 	@Id
 	@GeneratedValue
+	@JsonView(Views.Internal.class)
 	private Long orderid;
+	@JsonView(Views.Internal.class)
 	private String orderDescription;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
